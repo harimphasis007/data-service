@@ -1,0 +1,39 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.data.service"
+    },
+    "jhipsterVersion": "6.5.1",
+    "applicationType": "microservice",
+    "baseName": "dataservice",
+    "packageName": "com.data.service",
+    "packageFolder": "com/data/service",
+    "serverPort": "8083",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MWJkY2UxNjg4YWU3MTg2ZjBjOTgzN2Y2MzhhY2FiOWYyZjc0MDIwNzY5YTZlNTQ0MTc0Yzg0NDE1ZmM4ZjhkOWM2OTljMmI0NGQ5MjRlODY2M2QyYWVjMTAxNDZjNDZjYzAwNzk3OGFjNzhkODM2ZDU1ZDkxOWE2YWUzZjFhNGM=",
+    "embeddableLaunchScript": false,
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  }
+}
