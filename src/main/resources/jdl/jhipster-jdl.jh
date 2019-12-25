@@ -1,0 +1,14 @@
+
+entity Project {
+	pNo String,
+    programName String,
+    memberName String,
+    applicationDate LocalDate,
+    pStatus String,
+    currentAssign String,
+    currentAssDate LocalDate,
+    analystAssign String,
+    managerAssign String
+}
+
+microservice * with dataservice
