@@ -106,4 +106,18 @@ To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`)
 [setting up continuous integration]: https://www.jhipster.tech/documentation-archive/v6.5.1/setting-up-ci/
 # data-service
 
-#commit
+#Authorization header 
+1.create jwt token from https://jwt.io/#debugger
+2.pass payload
+{
+   "username": "admin",
+"password":"admin",
+ "sub": "admin",
+"auth": {
+   "role":"ROLE_ADMIN"
+   }
+}
+3.get base64-secret from application-dev/prod.yml 
+4.put this secreat and generate jwt token
+5.pass Authorization header with Bearer token (eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJhZG1pbiIsInN1YiI6ImFkbWluIiwiYXV0aCI6eyJyb2xlIjoiUk9MRV9BRE1JTiJ9fQ.ss39aPc3y1ocEFYV7Hcdadoxm4FNYhNN4HFN39olI3c)
+
