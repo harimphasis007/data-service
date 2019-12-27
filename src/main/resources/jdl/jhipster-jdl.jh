@@ -1,14 +1,150 @@
+entity Program {
+	programName String required
+}
 
 entity Project {
-	pNo String,
-    programName String,
-    memberName String,
-    applicationDate LocalDate,
-    pStatus String,
-    currentAssign String,
-    currentAssDate LocalDate,
+	projectNo String required,
+	projectName String required,
+    projectStatus String
+
+}
+
+entity Application {
+    applicationNo String required,
+	applicationDate LocalDate,
+	applicationReviewStatus String,
+	totalAmountRequested String,
+	managerDecision String,
+	managerReviewEndDate LocalDate,
+	totalReviewTurnTime String,
+	notificationSentDate LocalDate,
+	certificationName String,
+	certificationTitle String,
+	certificationDate LocalDate,
+	projectSpecificApplication String,
+	currentReviewStatus String,
+	createdOn LocalDate,
+	createdBy String,
+	currentCompletePer String,
+	lastUpdatedOn LocalDate
+
+}
+
+entity Member {
+	memberName String required
+}
+
+
+
+entity Commitment {
+    commitmentStatus String required,
+	commitmentBal String,
+	commitmentExpiration LocalDate
+}
+
+entity Assignment{
+	currentAssign String required,
+    currentAssStDate LocalDate,
     analystAssign String,
     managerAssign String
 }
 
+entity Worker{
+	workerName String required,
+    workerRole String
+}
+
+entity InfoBeneficiaries{
+	area String required,
+    developmentInd String,
+    rentalUnits String,
+    ownerOccUnits String,
+    jobCreated String,
+    jobRetained String,
+    geoDefinedBeneficiaries String,
+    individualBeneficiaries String,
+    activityBeneficiaries String,
+    otherBeneficiaries String
+}
+
+entity Review{
+	assignedWorker String,
+    reviewStartDate LocalDate,
+	reviewEndDate LocalDate,
+	turnTime String,
+	comments String,
+	recommendation String,
+	decision String
+}
+
+entity Loan{
+    loanid String required,
+	settelmentDate LocalDate,
+	amount String,
+	term String,
+	propertyAddress String,
+	mbsPoolId String,
+	mbsQualifies String,
+	qualificationMethod String,
+	decision String,
+	rejectionReason String
+}
+
+
+entity Loanpool{
+    total String required,
+	qualified LocalDate,
+	rejected String,
+	unreviewed String,
+	totalAmount String,
+	qualifiedAmount String,
+	rejectedAmount String,
+	unreviewedAmount String
+
+}
+
+relationship OneToMany {
+	Program to Project{program}
+}
+
+
+relationship OneToOne{
+	Project{application} to Application
+}
+
+relationship OneToOne{
+	Project{infoBeneficiaries} to InfoBeneficiaries
+}
+
+relationship OneToOne {
+	Project{commitment} to Commitment
+}
+
+relationship OneToOne {
+	Project{assignment} to Assignment
+}
+
+relationship OneToOne {
+	Project{member} to Member
+}
+
+relationship OneToOne {
+	Assignment{worker} to Worker
+}
+
+relationship OneToOne {
+	Application{assignment} to Assignment
+}
+
+relationship OneToOne {
+	Worker{review} to Review
+}
+
+relationship OneToMany {
+	Application to Loan{application}
+}
+
+relationship OneToOne {
+	Application{loanpool} to Loanpool
+}
 microservice * with dataservice
