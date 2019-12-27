@@ -19,8 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Validator;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 
 import static com.data.service.web.rest.TestUtil.createFormattingConversionService;
@@ -35,32 +33,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = DataserviceApp.class)
 public class ProjectResourceIT {
 
-    private static final String DEFAULT_P_NO = "AAAAAAAAAA";
-    private static final String UPDATED_P_NO = "BBBBBBBBBB";
+    private static final String DEFAULT_PROJECT_NO = "AAAAAAAAAA";
+    private static final String UPDATED_PROJECT_NO = "BBBBBBBBBB";
 
-    private static final String DEFAULT_PROGRAM_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_PROGRAM_NAME = "BBBBBBBBBB";
+    private static final String DEFAULT_PROJECT_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_PROJECT_NAME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_MEMBER_NAME = "AAAAAAAAAA";
-    private static final String UPDATED_MEMBER_NAME = "BBBBBBBBBB";
-
-    private static final LocalDate DEFAULT_APPLICATION_DATE = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_APPLICATION_DATE = LocalDate.now(ZoneId.systemDefault());
-
-    private static final String DEFAULT_P_STATUS = "AAAAAAAAAA";
-    private static final String UPDATED_P_STATUS = "BBBBBBBBBB";
-
-    private static final String DEFAULT_CURRENT_ASSIGN = "AAAAAAAAAA";
-    private static final String UPDATED_CURRENT_ASSIGN = "BBBBBBBBBB";
-
-    private static final LocalDate DEFAULT_CURRENT_ASS_DATE = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_CURRENT_ASS_DATE = LocalDate.now(ZoneId.systemDefault());
-
-    private static final String DEFAULT_ANALYST_ASSIGN = "AAAAAAAAAA";
-    private static final String UPDATED_ANALYST_ASSIGN = "BBBBBBBBBB";
-
-    private static final String DEFAULT_MANAGER_ASSIGN = "AAAAAAAAAA";
-    private static final String UPDATED_MANAGER_ASSIGN = "BBBBBBBBBB";
+    private static final String DEFAULT_PROJECT_STATUS = "AAAAAAAAAA";
+    private static final String UPDATED_PROJECT_STATUS = "BBBBBBBBBB";
 
     @Autowired
     private ProjectRepository projectRepository;
@@ -104,15 +84,9 @@ public class ProjectResourceIT {
      */
     public static Project createEntity(EntityManager em) {
         Project project = new Project()
-            .pNo(DEFAULT_P_NO)
-            .programName(DEFAULT_PROGRAM_NAME)
-            .memberName(DEFAULT_MEMBER_NAME)
-            .applicationDate(DEFAULT_APPLICATION_DATE)
-            .pStatus(DEFAULT_P_STATUS)
-            .currentAssign(DEFAULT_CURRENT_ASSIGN)
-            .currentAssDate(DEFAULT_CURRENT_ASS_DATE)
-            .analystAssign(DEFAULT_ANALYST_ASSIGN)
-            .managerAssign(DEFAULT_MANAGER_ASSIGN);
+            .projectNo(DEFAULT_PROJECT_NO)
+            .projectName(DEFAULT_PROJECT_NAME)
+            .projectStatus(DEFAULT_PROJECT_STATUS);
         return project;
     }
     /**
@@ -123,15 +97,9 @@ public class ProjectResourceIT {
      */
     public static Project createUpdatedEntity(EntityManager em) {
         Project project = new Project()
-            .pNo(UPDATED_P_NO)
-            .programName(UPDATED_PROGRAM_NAME)
-            .memberName(UPDATED_MEMBER_NAME)
-            .applicationDate(UPDATED_APPLICATION_DATE)
-            .pStatus(UPDATED_P_STATUS)
-            .currentAssign(UPDATED_CURRENT_ASSIGN)
-            .currentAssDate(UPDATED_CURRENT_ASS_DATE)
-            .analystAssign(UPDATED_ANALYST_ASSIGN)
-            .managerAssign(UPDATED_MANAGER_ASSIGN);
+            .projectNo(UPDATED_PROJECT_NO)
+            .projectName(UPDATED_PROJECT_NAME)
+            .projectStatus(UPDATED_PROJECT_STATUS);
         return project;
     }
 
@@ -155,15 +123,9 @@ public class ProjectResourceIT {
         List<Project> projectList = projectRepository.findAll();
         assertThat(projectList).hasSize(databaseSizeBeforeCreate + 1);
         Project testProject = projectList.get(projectList.size() - 1);
-        assertThat(testProject.getpNo()).isEqualTo(DEFAULT_P_NO);
-        assertThat(testProject.getProgramName()).isEqualTo(DEFAULT_PROGRAM_NAME);
-        assertThat(testProject.getMemberName()).isEqualTo(DEFAULT_MEMBER_NAME);
-        assertThat(testProject.getApplicationDate()).isEqualTo(DEFAULT_APPLICATION_DATE);
-        assertThat(testProject.getpStatus()).isEqualTo(DEFAULT_P_STATUS);
-        assertThat(testProject.getCurrentAssign()).isEqualTo(DEFAULT_CURRENT_ASSIGN);
-        assertThat(testProject.getCurrentAssDate()).isEqualTo(DEFAULT_CURRENT_ASS_DATE);
-        assertThat(testProject.getAnalystAssign()).isEqualTo(DEFAULT_ANALYST_ASSIGN);
-        assertThat(testProject.getManagerAssign()).isEqualTo(DEFAULT_MANAGER_ASSIGN);
+        assertThat(testProject.getProjectNo()).isEqualTo(DEFAULT_PROJECT_NO);
+        assertThat(testProject.getProjectName()).isEqualTo(DEFAULT_PROJECT_NAME);
+        assertThat(testProject.getProjectStatus()).isEqualTo(DEFAULT_PROJECT_STATUS);
     }
 
     @Test
@@ -188,6 +150,42 @@ public class ProjectResourceIT {
 
     @Test
     @Transactional
+    public void checkProjectNoIsRequired() throws Exception {
+        int databaseSizeBeforeTest = projectRepository.findAll().size();
+        // set the field null
+        project.setProjectNo(null);
+
+        // Create the Project, which fails.
+
+        restProjectMockMvc.perform(post("/api/projects")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(project)))
+            .andExpect(status().isBadRequest());
+
+        List<Project> projectList = projectRepository.findAll();
+        assertThat(projectList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkProjectNameIsRequired() throws Exception {
+        int databaseSizeBeforeTest = projectRepository.findAll().size();
+        // set the field null
+        project.setProjectName(null);
+
+        // Create the Project, which fails.
+
+        restProjectMockMvc.perform(post("/api/projects")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(project)))
+            .andExpect(status().isBadRequest());
+
+        List<Project> projectList = projectRepository.findAll();
+        assertThat(projectList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
     public void getAllProjects() throws Exception {
         // Initialize the database
         projectRepository.saveAndFlush(project);
@@ -197,15 +195,9 @@ public class ProjectResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(project.getId().intValue())))
-            .andExpect(jsonPath("$.[*].pNo").value(hasItem(DEFAULT_P_NO)))
-            .andExpect(jsonPath("$.[*].programName").value(hasItem(DEFAULT_PROGRAM_NAME)))
-            .andExpect(jsonPath("$.[*].memberName").value(hasItem(DEFAULT_MEMBER_NAME)))
-            .andExpect(jsonPath("$.[*].applicationDate").value(hasItem(DEFAULT_APPLICATION_DATE.toString())))
-            .andExpect(jsonPath("$.[*].pStatus").value(hasItem(DEFAULT_P_STATUS)))
-            .andExpect(jsonPath("$.[*].currentAssign").value(hasItem(DEFAULT_CURRENT_ASSIGN)))
-            .andExpect(jsonPath("$.[*].currentAssDate").value(hasItem(DEFAULT_CURRENT_ASS_DATE.toString())))
-            .andExpect(jsonPath("$.[*].analystAssign").value(hasItem(DEFAULT_ANALYST_ASSIGN)))
-            .andExpect(jsonPath("$.[*].managerAssign").value(hasItem(DEFAULT_MANAGER_ASSIGN)));
+            .andExpect(jsonPath("$.[*].projectNo").value(hasItem(DEFAULT_PROJECT_NO)))
+            .andExpect(jsonPath("$.[*].projectName").value(hasItem(DEFAULT_PROJECT_NAME)))
+            .andExpect(jsonPath("$.[*].projectStatus").value(hasItem(DEFAULT_PROJECT_STATUS)));
     }
     
     @Test
@@ -219,15 +211,9 @@ public class ProjectResourceIT {
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(project.getId().intValue()))
-            .andExpect(jsonPath("$.pNo").value(DEFAULT_P_NO))
-            .andExpect(jsonPath("$.programName").value(DEFAULT_PROGRAM_NAME))
-            .andExpect(jsonPath("$.memberName").value(DEFAULT_MEMBER_NAME))
-            .andExpect(jsonPath("$.applicationDate").value(DEFAULT_APPLICATION_DATE.toString()))
-            .andExpect(jsonPath("$.pStatus").value(DEFAULT_P_STATUS))
-            .andExpect(jsonPath("$.currentAssign").value(DEFAULT_CURRENT_ASSIGN))
-            .andExpect(jsonPath("$.currentAssDate").value(DEFAULT_CURRENT_ASS_DATE.toString()))
-            .andExpect(jsonPath("$.analystAssign").value(DEFAULT_ANALYST_ASSIGN))
-            .andExpect(jsonPath("$.managerAssign").value(DEFAULT_MANAGER_ASSIGN));
+            .andExpect(jsonPath("$.projectNo").value(DEFAULT_PROJECT_NO))
+            .andExpect(jsonPath("$.projectName").value(DEFAULT_PROJECT_NAME))
+            .andExpect(jsonPath("$.projectStatus").value(DEFAULT_PROJECT_STATUS));
     }
 
     @Test
@@ -251,15 +237,9 @@ public class ProjectResourceIT {
         // Disconnect from session so that the updates on updatedProject are not directly saved in db
         em.detach(updatedProject);
         updatedProject
-            .pNo(UPDATED_P_NO)
-            .programName(UPDATED_PROGRAM_NAME)
-            .memberName(UPDATED_MEMBER_NAME)
-            .applicationDate(UPDATED_APPLICATION_DATE)
-            .pStatus(UPDATED_P_STATUS)
-            .currentAssign(UPDATED_CURRENT_ASSIGN)
-            .currentAssDate(UPDATED_CURRENT_ASS_DATE)
-            .analystAssign(UPDATED_ANALYST_ASSIGN)
-            .managerAssign(UPDATED_MANAGER_ASSIGN);
+            .projectNo(UPDATED_PROJECT_NO)
+            .projectName(UPDATED_PROJECT_NAME)
+            .projectStatus(UPDATED_PROJECT_STATUS);
 
         restProjectMockMvc.perform(put("/api/projects")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -270,15 +250,9 @@ public class ProjectResourceIT {
         List<Project> projectList = projectRepository.findAll();
         assertThat(projectList).hasSize(databaseSizeBeforeUpdate);
         Project testProject = projectList.get(projectList.size() - 1);
-        assertThat(testProject.getpNo()).isEqualTo(UPDATED_P_NO);
-        assertThat(testProject.getProgramName()).isEqualTo(UPDATED_PROGRAM_NAME);
-        assertThat(testProject.getMemberName()).isEqualTo(UPDATED_MEMBER_NAME);
-        assertThat(testProject.getApplicationDate()).isEqualTo(UPDATED_APPLICATION_DATE);
-        assertThat(testProject.getpStatus()).isEqualTo(UPDATED_P_STATUS);
-        assertThat(testProject.getCurrentAssign()).isEqualTo(UPDATED_CURRENT_ASSIGN);
-        assertThat(testProject.getCurrentAssDate()).isEqualTo(UPDATED_CURRENT_ASS_DATE);
-        assertThat(testProject.getAnalystAssign()).isEqualTo(UPDATED_ANALYST_ASSIGN);
-        assertThat(testProject.getManagerAssign()).isEqualTo(UPDATED_MANAGER_ASSIGN);
+        assertThat(testProject.getProjectNo()).isEqualTo(UPDATED_PROJECT_NO);
+        assertThat(testProject.getProjectName()).isEqualTo(UPDATED_PROJECT_NAME);
+        assertThat(testProject.getProjectStatus()).isEqualTo(UPDATED_PROJECT_STATUS);
     }
 
     @Test

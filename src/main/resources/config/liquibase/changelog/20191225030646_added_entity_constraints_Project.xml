@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Project.
+    -->
+    <changeSet id="20191225030646-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="application_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_application_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="application"/>
+
+        <addForeignKeyConstraint baseColumnNames="info_beneficiaries_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_info_beneficiaries_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="info_beneficiaries"/>
+
+        <addForeignKeyConstraint baseColumnNames="commitment_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_commitment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="commitment"/>
+
+        <addForeignKeyConstraint baseColumnNames="assignment_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_assignment_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="assignment"/>
+
+        <addForeignKeyConstraint baseColumnNames="member_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_member_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="member"/>
+
+        <addForeignKeyConstraint baseColumnNames="program_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_program_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="program"/>
+
+    </changeSet>
+</databaseChangeLog>

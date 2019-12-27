@@ -1,11 +1,12 @@
 package com.data.service.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 /**
  * A Project.
@@ -21,32 +22,40 @@ public class Project implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "p_no")
-    private String pNo;
+    @NotNull
+    @Column(name = "project_no", nullable = false)
+    private String projectNo;
 
-    @Column(name = "program_name")
-    private String programName;
+    @NotNull
+    @Column(name = "project_name", nullable = false)
+    private String projectName;
 
-    @Column(name = "member_name")
-    private String memberName;
+    @Column(name = "project_status")
+    private String projectStatus;
 
-    @Column(name = "application_date")
-    private LocalDate applicationDate;
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Application application;
 
-    @Column(name = "p_status")
-    private String pStatus;
+    @OneToOne
+    @JoinColumn(unique = true)
+    private InfoBeneficiaries infoBeneficiaries;
 
-    @Column(name = "current_assign")
-    private String currentAssign;
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Commitment commitment;
 
-    @Column(name = "current_ass_date")
-    private LocalDate currentAssDate;
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Assignment assignment;
 
-    @Column(name = "analyst_assign")
-    private String analystAssign;
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Member member;
 
-    @Column(name = "manager_assign")
-    private String managerAssign;
+    @ManyToOne
+    @JsonIgnoreProperties("projects")
+    private Program program;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -57,121 +66,121 @@ public class Project implements Serializable {
         this.id = id;
     }
 
-    public String getpNo() {
-        return pNo;
+    public String getProjectNo() {
+        return projectNo;
     }
 
-    public Project pNo(String pNo) {
-        this.pNo = pNo;
+    public Project projectNo(String projectNo) {
+        this.projectNo = projectNo;
         return this;
     }
 
-    public void setpNo(String pNo) {
-        this.pNo = pNo;
+    public void setProjectNo(String projectNo) {
+        this.projectNo = projectNo;
     }
 
-    public String getProgramName() {
-        return programName;
+    public String getProjectName() {
+        return projectName;
     }
 
-    public Project programName(String programName) {
-        this.programName = programName;
+    public Project projectName(String projectName) {
+        this.projectName = projectName;
         return this;
     }
 
-    public void setProgramName(String programName) {
-        this.programName = programName;
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
     }
 
-    public String getMemberName() {
-        return memberName;
+    public String getProjectStatus() {
+        return projectStatus;
     }
 
-    public Project memberName(String memberName) {
-        this.memberName = memberName;
+    public Project projectStatus(String projectStatus) {
+        this.projectStatus = projectStatus;
         return this;
     }
 
-    public void setMemberName(String memberName) {
-        this.memberName = memberName;
+    public void setProjectStatus(String projectStatus) {
+        this.projectStatus = projectStatus;
     }
 
-    public LocalDate getApplicationDate() {
-        return applicationDate;
+    public Application getApplication() {
+        return application;
     }
 
-    public Project applicationDate(LocalDate applicationDate) {
-        this.applicationDate = applicationDate;
+    public Project application(Application application) {
+        this.application = application;
         return this;
     }
 
-    public void setApplicationDate(LocalDate applicationDate) {
-        this.applicationDate = applicationDate;
+    public void setApplication(Application application) {
+        this.application = application;
     }
 
-    public String getpStatus() {
-        return pStatus;
+    public InfoBeneficiaries getInfoBeneficiaries() {
+        return infoBeneficiaries;
     }
 
-    public Project pStatus(String pStatus) {
-        this.pStatus = pStatus;
+    public Project infoBeneficiaries(InfoBeneficiaries infoBeneficiaries) {
+        this.infoBeneficiaries = infoBeneficiaries;
         return this;
     }
 
-    public void setpStatus(String pStatus) {
-        this.pStatus = pStatus;
+    public void setInfoBeneficiaries(InfoBeneficiaries infoBeneficiaries) {
+        this.infoBeneficiaries = infoBeneficiaries;
     }
 
-    public String getCurrentAssign() {
-        return currentAssign;
+    public Commitment getCommitment() {
+        return commitment;
     }
 
-    public Project currentAssign(String currentAssign) {
-        this.currentAssign = currentAssign;
+    public Project commitment(Commitment commitment) {
+        this.commitment = commitment;
         return this;
     }
 
-    public void setCurrentAssign(String currentAssign) {
-        this.currentAssign = currentAssign;
+    public void setCommitment(Commitment commitment) {
+        this.commitment = commitment;
     }
 
-    public LocalDate getCurrentAssDate() {
-        return currentAssDate;
+    public Assignment getAssignment() {
+        return assignment;
     }
 
-    public Project currentAssDate(LocalDate currentAssDate) {
-        this.currentAssDate = currentAssDate;
+    public Project assignment(Assignment assignment) {
+        this.assignment = assignment;
         return this;
     }
 
-    public void setCurrentAssDate(LocalDate currentAssDate) {
-        this.currentAssDate = currentAssDate;
+    public void setAssignment(Assignment assignment) {
+        this.assignment = assignment;
     }
 
-    public String getAnalystAssign() {
-        return analystAssign;
+    public Member getMember() {
+        return member;
     }
 
-    public Project analystAssign(String analystAssign) {
-        this.analystAssign = analystAssign;
+    public Project member(Member member) {
+        this.member = member;
         return this;
     }
 
-    public void setAnalystAssign(String analystAssign) {
-        this.analystAssign = analystAssign;
+    public void setMember(Member member) {
+        this.member = member;
     }
 
-    public String getManagerAssign() {
-        return managerAssign;
+    public Program getProgram() {
+        return program;
     }
 
-    public Project managerAssign(String managerAssign) {
-        this.managerAssign = managerAssign;
+    public Project program(Program program) {
+        this.program = program;
         return this;
     }
 
-    public void setManagerAssign(String managerAssign) {
-        this.managerAssign = managerAssign;
+    public void setProgram(Program program) {
+        this.program = program;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
@@ -195,15 +204,9 @@ public class Project implements Serializable {
     public String toString() {
         return "Project{" +
             "id=" + getId() +
-            ", pNo='" + getpNo() + "'" +
-            ", programName='" + getProgramName() + "'" +
-            ", memberName='" + getMemberName() + "'" +
-            ", applicationDate='" + getApplicationDate() + "'" +
-            ", pStatus='" + getpStatus() + "'" +
-            ", currentAssign='" + getCurrentAssign() + "'" +
-            ", currentAssDate='" + getCurrentAssDate() + "'" +
-            ", analystAssign='" + getAnalystAssign() + "'" +
-            ", managerAssign='" + getManagerAssign() + "'" +
+            ", projectNo='" + getProjectNo() + "'" +
+            ", projectName='" + getProjectName() + "'" +
+            ", projectStatus='" + getProjectStatus() + "'" +
             "}";
     }
 }
