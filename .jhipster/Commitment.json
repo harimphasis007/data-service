@@ -1,0 +1,32 @@
+{
+    "name": "Commitment",
+    "fields": [
+        {
+            "fieldName": "commitmentStatus",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "commitmentBal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "commitmentExpiration",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191227035459",
+    "entityTableName": "commitment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

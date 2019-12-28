@@ -1,0 +1,45 @@
+{
+    "name": "Review",
+    "fields": [
+        {
+            "fieldName": "assignedWorker",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reviewStartDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "reviewEndDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "turnTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recommendation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "decision",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191227035503",
+    "entityTableName": "review",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

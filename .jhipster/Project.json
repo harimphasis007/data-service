@@ -1,0 +1,83 @@
+{
+    "name": "Project",
+    "fields": [
+        {
+            "fieldName": "projectNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "projectName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "projectStatus",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "application",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "application",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "infoBeneficiaries",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "infoBeneficiaries",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "commitment",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "commitment",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "assignment",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "assignment",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "member",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "member",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "program",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "program",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191225030646",
+    "entityTableName": "project",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

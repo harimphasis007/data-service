@@ -1,0 +1,68 @@
+{
+    "name": "Loan",
+    "fields": [
+        {
+            "fieldName": "loanid",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "settelmentDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "term",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "propertyAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mbsPoolId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mbsQualifies",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualificationMethod",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "decision",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rejectionReason",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "application",
+            "otherEntityRelationshipName": "loan",
+            "relationshipName": "application",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191227035504",
+    "entityTableName": "loan",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}
