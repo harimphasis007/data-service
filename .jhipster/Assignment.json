@@ -1,0 +1,45 @@
+{
+    "name": "Assignment",
+    "fields": [
+        {
+            "fieldName": "currentAssign",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "currentAssStDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "analystAssign",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerAssign",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "worker",
+            "otherEntityRelationshipName": "assignment",
+            "relationshipName": "worker",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20191227035500",
+    "entityTableName": "assignment",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

@@ -1,0 +1,111 @@
+{
+    "name": "Application",
+    "fields": [
+        {
+            "fieldName": "applicationNo",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "applicationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "applicationReviewStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalAmountRequested",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerDecision",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "managerReviewEndDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "totalReviewTurnTime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "notificationSentDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "certificationName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "certificationTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "certificationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "projectSpecificApplication",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "currentReviewStatus",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "createdOn",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "currentCompletePer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastUpdatedOn",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "assignment",
+            "otherEntityRelationshipName": "application",
+            "relationshipName": "assignment",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "loanpool",
+            "otherEntityRelationshipName": "application",
+            "relationshipName": "loanpool",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "loan",
+            "otherEntityRelationshipName": "application",
+            "relationshipName": "loan"
+        }
+    ],
+    "changelogDate": "20191227035457",
+    "entityTableName": "application",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

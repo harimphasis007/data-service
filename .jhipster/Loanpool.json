@@ -1,0 +1,52 @@
+{
+    "name": "Loanpool",
+    "fields": [
+        {
+            "fieldName": "total",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "qualified",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "rejected",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unreviewed",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalAmount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "qualifiedAmount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rejectedAmount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "unreviewedAmount",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191227035505",
+    "entityTableName": "loanpool",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

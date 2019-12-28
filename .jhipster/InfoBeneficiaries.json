@@ -1,0 +1,60 @@
+{
+    "name": "InfoBeneficiaries",
+    "fields": [
+        {
+            "fieldName": "area",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "developmentInd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rentalUnits",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ownerOccUnits",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jobCreated",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "jobRetained",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "geoDefinedBeneficiaries",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "individualBeneficiaries",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activityBeneficiaries",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "otherBeneficiaries",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191227035502",
+    "entityTableName": "info_beneficiaries",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

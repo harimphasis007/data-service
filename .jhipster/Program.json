@@ -1,0 +1,31 @@
+{
+    "name": "Program",
+    "fields": [
+        {
+            "fieldName": "programName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "program",
+            "relationshipName": "project"
+        }
+    ],
+    "changelogDate": "20191227035455",
+    "entityTableName": "program",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}
