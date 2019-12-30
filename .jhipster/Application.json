@@ -97,7 +97,7 @@
             "relationshipName": "loan"
         }
     ],
-    "changelogDate": "20191227035457",
+    "changelogDate": "20191230152413",
     "entityTableName": "application",
     "dto": "no",
     "pagination": "no",

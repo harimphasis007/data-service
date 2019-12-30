@@ -7,6 +7,8 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A Project.
@@ -52,6 +54,10 @@ public class Project implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private Member member;
+
+    @OneToMany(mappedBy = "project")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<ProjectLog> projectLogs = new HashSet<>();
 
     @ManyToOne
     @JsonIgnoreProperties("projects")
@@ -168,6 +174,31 @@ public class Project implements Serializable {
 
     public void setMember(Member member) {
         this.member = member;
+    }
+
+    public Set<ProjectLog> getProjectLogs() {
+        return projectLogs;
+    }
+
+    public Project projectLogs(Set<ProjectLog> projectLogs) {
+        this.projectLogs = projectLogs;
+        return this;
+    }
+
+    public Project addProjectLog(ProjectLog projectLog) {
+        this.projectLogs.add(projectLog);
+        projectLog.setProject(this);
+        return this;
+    }
+
+    public Project removeProjectLog(ProjectLog projectLog) {
+        this.projectLogs.remove(projectLog);
+        projectLog.setProject(null);
+        return this;
+    }
+
+    public void setProjectLogs(Set<ProjectLog> projectLogs) {
+        this.projectLogs = projectLogs;
     }
 
     public Program getProgram() {

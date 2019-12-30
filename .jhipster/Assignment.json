@@ -29,9 +29,15 @@
             "relationshipName": "worker",
             "otherEntityField": "id",
             "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "workerHistory",
+            "otherEntityRelationshipName": "assignment",
+            "relationshipName": "workerHistory"
         }
     ],
-    "changelogDate": "20191227035500",
+    "changelogDate": "20191230152416",
     "entityTableName": "assignment",
     "dto": "no",
     "pagination": "no",

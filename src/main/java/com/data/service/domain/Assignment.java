@@ -7,6 +7,8 @@ import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A Assignment.
@@ -38,6 +40,10 @@ public class Assignment implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private Worker worker;
+
+    @OneToMany(mappedBy = "assignment")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<WorkerHistory> workerHistories = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -111,6 +117,31 @@ public class Assignment implements Serializable {
 
     public void setWorker(Worker worker) {
         this.worker = worker;
+    }
+
+    public Set<WorkerHistory> getWorkerHistories() {
+        return workerHistories;
+    }
+
+    public Assignment workerHistories(Set<WorkerHistory> workerHistories) {
+        this.workerHistories = workerHistories;
+        return this;
+    }
+
+    public Assignment addWorkerHistory(WorkerHistory workerHistory) {
+        this.workerHistories.add(workerHistory);
+        workerHistory.setAssignment(this);
+        return this;
+    }
+
+    public Assignment removeWorkerHistory(WorkerHistory workerHistory) {
+        this.workerHistories.remove(workerHistory);
+        workerHistory.setAssignment(null);
+        return this;
+    }
+
+    public void setWorkerHistories(Set<WorkerHistory> workerHistories) {
+        this.workerHistories = workerHistories;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

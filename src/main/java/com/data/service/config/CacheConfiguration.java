@@ -40,12 +40,17 @@ public class CacheConfiguration {
             createCache(cm, com.data.service.domain.Project.class.getName());
             createCache(cm, com.data.service.domain.Program.class.getName());
             createCache(cm, com.data.service.domain.Program.class.getName() + ".projects");
+            createCache(cm, com.data.service.domain.Project.class.getName() + ".projectLogs");
             createCache(cm, com.data.service.domain.Application.class.getName());
             createCache(cm, com.data.service.domain.Application.class.getName() + ".loans");
             createCache(cm, com.data.service.domain.Member.class.getName());
             createCache(cm, com.data.service.domain.Commitment.class.getName());
             createCache(cm, com.data.service.domain.Assignment.class.getName());
+            createCache(cm, com.data.service.domain.Assignment.class.getName() + ".workerHistories");
             createCache(cm, com.data.service.domain.Worker.class.getName());
+            createCache(cm, com.data.service.domain.WorkerHistory.class.getName());
+            createCache(cm, com.data.service.domain.NotificationHistory.class.getName());
+            createCache(cm, com.data.service.domain.ProjectLog.class.getName());
             createCache(cm, com.data.service.domain.InfoBeneficiaries.class.getName());
             createCache(cm, com.data.service.domain.Review.class.getName());
             createCache(cm, com.data.service.domain.Loan.class.getName());

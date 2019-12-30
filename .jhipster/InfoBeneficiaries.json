@@ -46,7 +46,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20191227035502",
+    "changelogDate": "20191230152421",
     "entityTableName": "info_beneficiaries",
     "dto": "no",
     "pagination": "no",

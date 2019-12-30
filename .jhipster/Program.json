@@ -17,7 +17,7 @@
             "relationshipName": "project"
         }
     ],
-    "changelogDate": "20191227035455",
+    "changelogDate": "20191230152411",
     "entityTableName": "program",
     "dto": "no",
     "pagination": "no",

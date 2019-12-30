@@ -1,0 +1,40 @@
+{
+    "name": "ProjectLog",
+    "fields": [
+        {
+            "fieldName": "worker",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "entryDetails",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "projectLog",
+            "relationshipName": "project",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191230152420",
+    "entityTableName": "project_log",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

@@ -31,7 +31,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20191227035503",
+    "changelogDate": "20191230152422",
     "entityTableName": "review",
     "dto": "no",
     "pagination": "no",

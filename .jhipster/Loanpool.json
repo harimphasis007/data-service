@@ -38,7 +38,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20191227035505",
+    "changelogDate": "20191230152424",
     "entityTableName": "loanpool",
     "dto": "no",
     "pagination": "no",

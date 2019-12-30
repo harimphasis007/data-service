@@ -54,7 +54,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191227035504",
+    "changelogDate": "20191230152423",
     "entityTableName": "loan",
     "dto": "no",
     "pagination": "no",

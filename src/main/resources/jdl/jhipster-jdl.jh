@@ -51,9 +51,34 @@ entity Assignment{
 
 entity Worker{
 	workerName String required,
-    workerRole String
+    workerRole String,
+    source String,
+    phoneNo String,
+    email String
 }
 
+entity WorkerHistory{
+	workerName String required,
+    workerRole String,
+    source String,
+    phoneNo String,
+    email String
+}
+
+entity NotificationHistory{
+	fromEmail String required,
+    sentDate LocalDate,
+    toAddress String,
+    ccAddress String,
+    notificationType String,
+    subjectLine String
+}
+
+entity ProjectLog{
+	worker String required,
+    entryDetails String,
+    date LocalDate
+}
 entity InfoBeneficiaries{
 	area String required,
     developmentInd String,
@@ -144,6 +169,13 @@ relationship OneToMany {
 	Application to Loan{application}
 }
 
+relationship OneToMany {
+	Assignment{workerHistory} to WorkerHistory
+}
+
+relationship OneToMany {
+	Project{projectLog} to ProjectLog
+}
 relationship OneToOne {
 	Application{loanpool} to Loanpool
 }

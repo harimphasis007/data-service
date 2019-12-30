@@ -1,0 +1,44 @@
+{
+    "name": "NotificationHistory",
+    "fields": [
+        {
+            "fieldName": "fromEmail",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sentDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "toAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ccAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "notificationType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "subjectLine",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191230152419",
+    "entityTableName": "notification_history",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}
