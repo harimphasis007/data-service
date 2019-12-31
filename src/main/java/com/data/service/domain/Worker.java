@@ -28,6 +28,15 @@ public class Worker implements Serializable {
     @Column(name = "worker_role")
     private String workerRole;
 
+    @Column(name = "source")
+    private String source;
+
+    @Column(name = "phone_no")
+    private String phoneNo;
+
+    @Column(name = "email")
+    private String email;
+
     @OneToOne
     @JoinColumn(unique = true)
     private Review review;
@@ -67,6 +76,45 @@ public class Worker implements Serializable {
         this.workerRole = workerRole;
     }
 
+    public String getSource() {
+        return source;
+    }
+
+    public Worker source(String source) {
+        this.source = source;
+        return this;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getPhoneNo() {
+        return phoneNo;
+    }
+
+    public Worker phoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+        return this;
+    }
+
+    public void setPhoneNo(String phoneNo) {
+        this.phoneNo = phoneNo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Worker email(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public Review getReview() {
         return review;
     }
@@ -103,6 +151,9 @@ public class Worker implements Serializable {
             "id=" + getId() +
             ", workerName='" + getWorkerName() + "'" +
             ", workerRole='" + getWorkerRole() + "'" +
+            ", source='" + getSource() + "'" +
+            ", phoneNo='" + getPhoneNo() + "'" +
+            ", email='" + getEmail() + "'" +
             "}";
     }
 }

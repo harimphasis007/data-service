@@ -18,7 +18,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20191227035459",
+    "changelogDate": "20191230152415",
     "entityTableName": "commitment",
     "dto": "no",
     "pagination": "no",

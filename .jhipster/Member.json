@@ -10,7 +10,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20191227035458",
+    "changelogDate": "20191230152414",
     "entityTableName": "member",
     "dto": "no",
     "pagination": "no",

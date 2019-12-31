@@ -11,6 +11,18 @@
         {
             "fieldName": "workerRole",
             "fieldType": "String"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
         }
     ],
     "relationships": [
@@ -23,7 +35,7 @@
             "ownerSide": true
         }
     ],
-    "changelogDate": "20191227035501",
+    "changelogDate": "20191230152417",
     "entityTableName": "worker",
     "dto": "no",
     "pagination": "no",

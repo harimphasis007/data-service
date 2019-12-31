@@ -39,6 +39,15 @@ public class WorkerResourceIT {
     private static final String DEFAULT_WORKER_ROLE = "AAAAAAAAAA";
     private static final String UPDATED_WORKER_ROLE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_SOURCE = "AAAAAAAAAA";
+    private static final String UPDATED_SOURCE = "BBBBBBBBBB";
+
+    private static final String DEFAULT_PHONE_NO = "AAAAAAAAAA";
+    private static final String UPDATED_PHONE_NO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_EMAIL = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL = "BBBBBBBBBB";
+
     @Autowired
     private WorkerRepository workerRepository;
 
@@ -82,7 +91,10 @@ public class WorkerResourceIT {
     public static Worker createEntity(EntityManager em) {
         Worker worker = new Worker()
             .workerName(DEFAULT_WORKER_NAME)
-            .workerRole(DEFAULT_WORKER_ROLE);
+            .workerRole(DEFAULT_WORKER_ROLE)
+            .source(DEFAULT_SOURCE)
+            .phoneNo(DEFAULT_PHONE_NO)
+            .email(DEFAULT_EMAIL);
         return worker;
     }
     /**
@@ -94,7 +106,10 @@ public class WorkerResourceIT {
     public static Worker createUpdatedEntity(EntityManager em) {
         Worker worker = new Worker()
             .workerName(UPDATED_WORKER_NAME)
-            .workerRole(UPDATED_WORKER_ROLE);
+            .workerRole(UPDATED_WORKER_ROLE)
+            .source(UPDATED_SOURCE)
+            .phoneNo(UPDATED_PHONE_NO)
+            .email(UPDATED_EMAIL);
         return worker;
     }
 
@@ -120,6 +135,9 @@ public class WorkerResourceIT {
         Worker testWorker = workerList.get(workerList.size() - 1);
         assertThat(testWorker.getWorkerName()).isEqualTo(DEFAULT_WORKER_NAME);
         assertThat(testWorker.getWorkerRole()).isEqualTo(DEFAULT_WORKER_ROLE);
+        assertThat(testWorker.getSource()).isEqualTo(DEFAULT_SOURCE);
+        assertThat(testWorker.getPhoneNo()).isEqualTo(DEFAULT_PHONE_NO);
+        assertThat(testWorker.getEmail()).isEqualTo(DEFAULT_EMAIL);
     }
 
     @Test
@@ -172,7 +190,10 @@ public class WorkerResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(worker.getId().intValue())))
             .andExpect(jsonPath("$.[*].workerName").value(hasItem(DEFAULT_WORKER_NAME)))
-            .andExpect(jsonPath("$.[*].workerRole").value(hasItem(DEFAULT_WORKER_ROLE)));
+            .andExpect(jsonPath("$.[*].workerRole").value(hasItem(DEFAULT_WORKER_ROLE)))
+            .andExpect(jsonPath("$.[*].source").value(hasItem(DEFAULT_SOURCE)))
+            .andExpect(jsonPath("$.[*].phoneNo").value(hasItem(DEFAULT_PHONE_NO)))
+            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)));
     }
     
     @Test
@@ -187,7 +208,10 @@ public class WorkerResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(worker.getId().intValue()))
             .andExpect(jsonPath("$.workerName").value(DEFAULT_WORKER_NAME))
-            .andExpect(jsonPath("$.workerRole").value(DEFAULT_WORKER_ROLE));
+            .andExpect(jsonPath("$.workerRole").value(DEFAULT_WORKER_ROLE))
+            .andExpect(jsonPath("$.source").value(DEFAULT_SOURCE))
+            .andExpect(jsonPath("$.phoneNo").value(DEFAULT_PHONE_NO))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL));
     }
 
     @Test
@@ -212,7 +236,10 @@ public class WorkerResourceIT {
         em.detach(updatedWorker);
         updatedWorker
             .workerName(UPDATED_WORKER_NAME)
-            .workerRole(UPDATED_WORKER_ROLE);
+            .workerRole(UPDATED_WORKER_ROLE)
+            .source(UPDATED_SOURCE)
+            .phoneNo(UPDATED_PHONE_NO)
+            .email(UPDATED_EMAIL);
 
         restWorkerMockMvc.perform(put("/api/workers")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -225,6 +252,9 @@ public class WorkerResourceIT {
         Worker testWorker = workerList.get(workerList.size() - 1);
         assertThat(testWorker.getWorkerName()).isEqualTo(UPDATED_WORKER_NAME);
         assertThat(testWorker.getWorkerRole()).isEqualTo(UPDATED_WORKER_ROLE);
+        assertThat(testWorker.getSource()).isEqualTo(UPDATED_SOURCE);
+        assertThat(testWorker.getPhoneNo()).isEqualTo(UPDATED_PHONE_NO);
+        assertThat(testWorker.getEmail()).isEqualTo(UPDATED_EMAIL);
     }
 
     @Test

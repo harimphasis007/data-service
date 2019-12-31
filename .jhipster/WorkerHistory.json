@@ -1,0 +1,48 @@
+{
+    "name": "WorkerHistory",
+    "fields": [
+        {
+            "fieldName": "workerName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "workerRole",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "source",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phoneNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "assignment",
+            "otherEntityRelationshipName": "workerHistory",
+            "relationshipName": "assignment",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191230152418",
+    "entityTableName": "worker_history",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

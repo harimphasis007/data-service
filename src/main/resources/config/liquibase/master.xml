@@ -15,21 +15,26 @@
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191225030646_added_entity_Project.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035455_added_entity_Program.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035457_added_entity_Application.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035458_added_entity_Member.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035459_added_entity_Commitment.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035500_added_entity_Assignment.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035501_added_entity_Worker.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035502_added_entity_InfoBeneficiaries.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035503_added_entity_Review.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035504_added_entity_Loan.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035505_added_entity_Loanpool.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152411_added_entity_Program.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152413_added_entity_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152414_added_entity_Member.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152415_added_entity_Commitment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152416_added_entity_Assignment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152417_added_entity_Worker.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152418_added_entity_WorkerHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152419_added_entity_NotificationHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152420_added_entity_ProjectLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152421_added_entity_InfoBeneficiaries.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152422_added_entity_Review.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152423_added_entity_Loan.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152424_added_entity_Loanpool.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20191225030646_added_entity_constraints_Project.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035457_added_entity_constraints_Application.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035500_added_entity_constraints_Assignment.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035501_added_entity_constraints_Worker.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20191227035504_added_entity_constraints_Loan.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152413_added_entity_constraints_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152416_added_entity_constraints_Assignment.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152417_added_entity_constraints_Worker.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152418_added_entity_constraints_WorkerHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152420_added_entity_constraints_ProjectLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152423_added_entity_constraints_Loan.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
