@@ -118,7 +118,7 @@ entity Loan{
 
 entity Loanpool{
     total String required,
-	qualified LocalDate,
+	qualified String,
 	rejected String,
 	unreviewed String,
 	totalAmount String,
