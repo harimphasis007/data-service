@@ -19,8 +19,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Validator;
 
 import javax.persistence.EntityManager;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 
 import static com.data.service.web.rest.TestUtil.createFormattingConversionService;
@@ -38,8 +36,8 @@ public class LoanpoolResourceIT {
     private static final String DEFAULT_TOTAL = "AAAAAAAAAA";
     private static final String UPDATED_TOTAL = "BBBBBBBBBB";
 
-    private static final LocalDate DEFAULT_QUALIFIED = LocalDate.ofEpochDay(0L);
-    private static final LocalDate UPDATED_QUALIFIED = LocalDate.now(ZoneId.systemDefault());
+    private static final String DEFAULT_QUALIFIED = "AAAAAAAAAA";
+    private static final String UPDATED_QUALIFIED = "BBBBBBBBBB";
 
     private static final String DEFAULT_REJECTED = "AAAAAAAAAA";
     private static final String UPDATED_REJECTED = "BBBBBBBBBB";
@@ -210,7 +208,7 @@ public class LoanpoolResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(loanpool.getId().intValue())))
             .andExpect(jsonPath("$.[*].total").value(hasItem(DEFAULT_TOTAL)))
-            .andExpect(jsonPath("$.[*].qualified").value(hasItem(DEFAULT_QUALIFIED.toString())))
+            .andExpect(jsonPath("$.[*].qualified").value(hasItem(DEFAULT_QUALIFIED)))
             .andExpect(jsonPath("$.[*].rejected").value(hasItem(DEFAULT_REJECTED)))
             .andExpect(jsonPath("$.[*].unreviewed").value(hasItem(DEFAULT_UNREVIEWED)))
             .andExpect(jsonPath("$.[*].totalAmount").value(hasItem(DEFAULT_TOTAL_AMOUNT)))
@@ -231,7 +229,7 @@ public class LoanpoolResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(loanpool.getId().intValue()))
             .andExpect(jsonPath("$.total").value(DEFAULT_TOTAL))
-            .andExpect(jsonPath("$.qualified").value(DEFAULT_QUALIFIED.toString()))
+            .andExpect(jsonPath("$.qualified").value(DEFAULT_QUALIFIED))
             .andExpect(jsonPath("$.rejected").value(DEFAULT_REJECTED))
             .andExpect(jsonPath("$.unreviewed").value(DEFAULT_UNREVIEWED))
             .andExpect(jsonPath("$.totalAmount").value(DEFAULT_TOTAL_AMOUNT))

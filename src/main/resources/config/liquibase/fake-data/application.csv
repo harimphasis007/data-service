@@ -1,4 +1,6 @@
-id;application_no;application_date;application_review_status;total_amount_requested;manager_decision;manager_review_end_date;total_review_turn_time;notification_sent_date;certification_name;certification_title;certification_date;project_specific_application;current_review_status;created_on;created_by;current_complete_per;last_updated_on
-1;8458;2019-12-11;;22000000;approved;2019-12-12;;2019-12-12;John Smith;Leading Specialist;2019-11-08;NO;Analyst Review;2019-11-12;John Smith;25;2019-11-12
-2;8425;2019-12-01;;22000000;approved;2019-12-12;;2019-12-12;Jason;Leading Specialist;2019-11-08;NO;Analyst Review;2019-11-12;Jason;25;2019-11-12
-3;8418;2019-12-01;;22000000;approved;2019-12-12;;2019-12-12;Jane Anderson;Leading Specialist;2019-11-08;NO;Analyst Review;2019-11-12;Jane Anderson;25;2019-11-12
+id;application_no;application_date;application_review_status;total_amount_requested;manager_decision;manager_review_end_date;total_review_turn_time;notification_sent_date;certification_name;certification_title;certification_date;project_specific_application;current_review_status;created_on;created_by;current_complete_per;last_updated_on;assignment_id;loanpool_id
+1;8458;2019-12-11;;22000000;approved;2019-12-12;;2019-12-12;John Smith;Leading Specialist;2019-11-08;NO;Analyst Review;2019-11-12;John Smith;25;2019-11-12;1;1
+2;8425;2019-12-01;;22000000;approved;2019-12-12;;2019-12-12;Jason;Leading Specialist;2019-11-08;NO;Analyst Review;2019-11-12;Jason;25;2019-11-12;2;2
+3;8418;2019-12-01;;22000000;approved;2019-12-12;;2019-12-12;Jane Anderson;Leading Specialist;2019-11-08;NO;Analyst Review;2019-11-12;Jane Anderson;25;2019-11-12;3;3
+4;8417;2019-12-01;;0;approved;2019-12-12;;2019-12-12;Shawn Anderson;Leading Specialist;2019-11-08;NO;Analyst Review;2019-11-12;Shawn Anderson;25;2019-11-12;4;4
+5;8416;2019-12-01;;0;approved;2019-12-12;;2019-12-12;Mike Anderson;Leading Specialist;2019-11-08;NO;Analyst Review;2019-11-12;Mike Anderson;25;2019-11-12;5;5

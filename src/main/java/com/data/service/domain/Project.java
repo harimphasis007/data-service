@@ -59,6 +59,10 @@ public class Project implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ProjectLog> projectLogs = new HashSet<>();
 
+    @OneToMany(mappedBy = "project")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<NotificationHistory> notificationHistories = new HashSet<>();
+
     @ManyToOne
     @JsonIgnoreProperties("projects")
     private Program program;
@@ -199,6 +203,31 @@ public class Project implements Serializable {
 
     public void setProjectLogs(Set<ProjectLog> projectLogs) {
         this.projectLogs = projectLogs;
+    }
+
+    public Set<NotificationHistory> getNotificationHistories() {
+        return notificationHistories;
+    }
+
+    public Project notificationHistories(Set<NotificationHistory> notificationHistories) {
+        this.notificationHistories = notificationHistories;
+        return this;
+    }
+
+    public Project addNotificationHistory(NotificationHistory notificationHistory) {
+        this.notificationHistories.add(notificationHistory);
+        notificationHistory.setProject(this);
+        return this;
+    }
+
+    public Project removeNotificationHistory(NotificationHistory notificationHistory) {
+        this.notificationHistories.remove(notificationHistory);
+        notificationHistory.setProject(null);
+        return this;
+    }
+
+    public void setNotificationHistories(Set<NotificationHistory> notificationHistories) {
+        this.notificationHistories = notificationHistories;
     }
 
     public Program getProgram() {

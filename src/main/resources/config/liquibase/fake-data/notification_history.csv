@@ -1,3 +1,6 @@
-id;from_email;sent_date;to_address;cc_address;notification_type;subject_line
-1;clp@fhlbny.com;2019-12-11;johnsmith@memeberbank.com,janeandersone@memeberbank.com,margeretthompson@memeberbank.com;margeretthompson@memeberbank.com;Application Received;Community Investment Program Application #5000 Received on 11/12/2019
-
+id;from_email;sent_date;to_address;cc_address;notification_type;subject_line;project_id
+1;clp@fhlbny.com;2019-12-11;johnsmith@memeberbank.com,janeandersone@memeberbank.com,margeretthompson@memeberbank.com;margeretthompson@memeberbank.com;Application Received;Community Investment Program Application #5000 Received on 11/12/2019;1
+2;clp@fhlbny.com;2019-12-11;johnsmith@memeberbank.com,janeandersone@memeberbank.com,margeretthompson@memeberbank.com;margeretthompson@memeberbank.com;Application Received;Community Investment Program Application #5000 Received on 11/12/2019;2
+3;clp@fhlbny.com;2019-12-11;johnsmith@memeberbank.com,janeandersone@memeberbank.com,margeretthompson@memeberbank.com;margeretthompson@memeberbank.com;Application Received;Community Investment Program Application #5000 Received on 11/12/2019;3
+4;clp@fhlbny.com;2019-12-11;johnsmith@memeberbank.com,janeandersone@memeberbank.com,margeretthompson@memeberbank.com;margeretthompson@memeberbank.com;Application Received;Community Investment Program Application #5000 Received on 11/12/2019;4
+5;clp@fhlbny.com;2019-12-11;johnsmith@memeberbank.com,janeandersone@memeberbank.com,margeretthompson@memeberbank.com;margeretthompson@memeberbank.com;Application Received;Community Investment Program Application #5000 Received on 11/12/2019;5

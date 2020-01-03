@@ -1,4 +1,6 @@
-id;current_assign;current_ass_st_date;analyst_assign;manager_assign
-1;Kieth;2019-12-11;Kieth;Bose
-2;Danial;2019-11-13;Danial;Alex
-3;Jeim;2019-11-08;Jeim;John
+id;current_assign;current_ass_st_date;analyst_assign;manager_assign;worker_id
+1;Kieth;2019-12-11;Kieth;Bose;1
+2;Danial;2019-11-13;Danial;Alex;2
+3;Jeim;2019-11-08;Jeim;John;3
+4;Sheryl;2019-11-06;Sheryl;John;4
+5;Kim;2019-11-05;Kim;John;5

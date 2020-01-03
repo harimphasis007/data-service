@@ -68,6 +68,12 @@
             "relationshipName": "projectLog"
         },
         {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "notificationHistory",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "notificationHistory"
+        },
+        {
             "relationshipType": "many-to-one",
             "otherEntityName": "program",
             "otherEntityRelationshipName": "project",

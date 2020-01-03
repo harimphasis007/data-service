@@ -10,7 +10,7 @@
         },
         {
             "fieldName": "qualified",
-            "fieldType": "LocalDate"
+            "fieldType": "String"
         },
         {
             "fieldName": "rejected",

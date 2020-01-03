@@ -36,5 +36,6 @@
     <include file="config/liquibase/changelog/20191230152418_added_entity_constraints_WorkerHistory.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191230152420_added_entity_constraints_ProjectLog.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20191230152423_added_entity_constraints_Loan.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191230152419_added_entity_constraints_NotificationHistory.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

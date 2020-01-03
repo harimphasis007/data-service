@@ -1,5 +1,21 @@
-id;loanid;settelment_date;amount;term;property_address;mbs_pool_id;mbs_qualifies;qualification_method;decision;rejection_reason
-1;12345;2019-10-11;14000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Rental Affordability;Qualified;
-2;23456;2019-10-15;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;
-3;23457;2019-10-17;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;
-4;34567;2019-10-17;7000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Household Income Eligibilty Affordability;Rejected;Duplicate Submission
+id;loanid;settelment_date;amount;term;property_address;mbs_pool_id;mbs_qualifies;qualification_method;decision;rejection_reason;application_id
+1;12345;2019-10-11;14000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Rental Affordability;Qualified;;1
+2;23456;2019-10-15;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;1
+3;23457;2019-10-17;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;1
+4;34567;2019-10-17;7000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Household Income Eligibilty Affordability;Rejected;Duplicate Submission;1
+5;12345;2019-10-11;14000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Rental Affordability;Qualified;;2
+6;23456;2019-10-15;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;2
+7;23457;2019-10-17;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;2
+8;34567;2019-10-17;7000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Household Income Eligibilty Affordability;Rejected;Duplicate Submission;2
+9;12345;2019-10-11;14000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Rental Affordability;Qualified;;3
+10;23456;2019-10-15;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;3
+11;23457;2019-10-17;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;3
+12;34567;2019-10-17;7000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Household Income Eligibilty Affordability;Rejected;Duplicate Submission;3
+13;12345;2019-10-11;14000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Rental Affordability;Qualified;;4
+14;23456;2019-10-15;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;4
+15;23457;2019-10-17;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;4
+16;34567;2019-10-17;7000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Household Income Eligibilty Affordability;Rejected;Duplicate Submission;4
+17;12345;2019-10-11;14000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Rental Affordability;Qualified;;5
+18;23456;2019-10-15;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;5
+19;23457;2019-10-17;500000;360;1 Main St , Southe Salem NY 10590 ;3SX42;Yes;Owner Occupied;Qualified;;5
+20;34567;2019-10-17;7000000;180;1 Main St , Southe Salem NY 10590 ;;;Multifamily Household Income Eligibilty Affordability;Rejected;Duplicate Submission;5
