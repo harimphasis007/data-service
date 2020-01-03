@@ -1,4 +1,5 @@
 package com.data.service.domain;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
@@ -40,6 +41,10 @@ public class NotificationHistory implements Serializable {
 
     @Column(name = "subject_line")
     private String subjectLine;
+
+    @ManyToOne
+    @JsonIgnoreProperties("notificationHistories")
+    private Project project;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -126,6 +131,19 @@ public class NotificationHistory implements Serializable {
 
     public void setSubjectLine(String subjectLine) {
         this.subjectLine = subjectLine;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public NotificationHistory project(Project project) {
+        this.project = project;
+        return this;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

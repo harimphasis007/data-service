@@ -176,6 +176,11 @@ relationship OneToMany {
 relationship OneToMany {
 	Project{projectLog} to ProjectLog
 }
+
+relationship OneToMany {
+	Project{notificationHistory} to NotificationHistory
+}
+
 relationship OneToOne {
 	Application{loanpool} to Loanpool
 }

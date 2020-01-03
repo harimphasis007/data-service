@@ -1,2 +1,6 @@
 id;area;development_ind;rental_units;owner_occ_units;job_created;job_retained;geo_defined_beneficiaries;individual_beneficiaries;activity_beneficiaries;other_beneficiaries
 1;urban;Housing;5;5;10;5;TARGETED_INCOME;JOBS_CREATED;SBA;
+2;urban;Housing;5;5;10;5;TARGETED_INCOME;JOBS_CREATED;SBA;
+3;urban;Housing;5;5;10;5;TARGETED_INCOME;JOBS_CREATED;SBA;
+4;urban;Housing;5;5;10;5;TARGETED_INCOME;JOBS_CREATED;SBA;
+5;urban;Housing;5;5;10;5;TARGETED_INCOME;JOBS_CREATED;SBA;

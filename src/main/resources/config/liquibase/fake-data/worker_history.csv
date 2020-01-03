@@ -1,4 +1,16 @@
-id;worker_name;worker_role;source;phone_no;email
-1;John Smith;Leading Specialist;Application(Certification Section);212-960-8841;johnsmith@memeberbank.com
-2;Jane Anderson;Leading Analyst;CRM;212-960-8841;janeandersone@memeberbank.com
-3;Margeret Thompson;Leading Officer;CRM;212-960-8841;margeretthompson@memeberbank.com
+id;worker_name;worker_role;source;phone_no;email;assignment_id
+1;John Smith;Leading Specialist;Application(Certification Section);212-960-8841;johnsmith@memeberbank.com;1
+2;Jane Anderson;Leading Analyst;CRM;212-960-8841;janeandersone@memeberbank.com;1
+3;Margeret Thompson;Leading Officer;CRM;212-960-8841;margeretthompson@memeberbank.com;1
+4;Shawn Smith;Leading Specialist;Application(Certification Section);212-960-8841;shawnsmith@memeberbank.com;2
+5;Guru Anderson;Leading Analyst;CRM;212-960-8841;guruandersone@memeberbank.com;2
+6;Sheryl Thompson;Leading Officer;CRM;212-960-8841;sherylthompson@memeberbank.com;2
+7;John Smith;Leading Specialist;Application(Certification Section);212-960-8841;johnsmith@memeberbank.com;3
+8;Jane Anderson;Leading Analyst;CRM;212-960-8841;janeandersone@memeberbank.com;3
+9;Margeret Thompson;Leading Officer;CRM;212-960-8841;margeretthompson@memeberbank.com;3
+10;John Smith;Leading Specialist;Application(Certification Section);212-960-8841;johnsmith@memeberbank.com;4
+11;Jane Anderson;Leading Analyst;CRM;212-960-8841;janeandersone@memeberbank.com;4
+12;Margeret Thompson;Leading Officer;CRM;212-960-8841;margeretthompson@memeberbank.com;4
+13;John Smith;Leading Specialist;Application(Certification Section);212-960-8841;johnsmith@memeberbank.com;5
+14;Jane Anderson;Leading Analyst;CRM;212-960-8841;janeandersone@memeberbank.com;5
+15;Margeret Thompson;Leading Officer;CRM;212-960-8841;margeretthompson@memeberbank.com;5

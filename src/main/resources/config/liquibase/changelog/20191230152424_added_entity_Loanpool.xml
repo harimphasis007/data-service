@@ -19,7 +19,7 @@
             <column name="total" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-            <column name="qualified" type="date">
+            <column name="qualified" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <column name="rejected" type="varchar(255)">
@@ -64,7 +64,7 @@
                   tableName="loanpool">
             <column name="id" type="numeric"/>
             <column name="total" type="string"/>
-            <column name="qualified" type="date"/>
+            <column name="qualified" type="string"/>
             <column name="rejected" type="string"/>
             <column name="unreviewed" type="string"/>
             <column name="total_amount" type="string"/>

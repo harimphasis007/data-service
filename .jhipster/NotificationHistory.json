@@ -29,7 +29,15 @@
             "fieldType": "String"
         }
     ],
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "notificationHistory",
+            "relationshipName": "project",
+            "otherEntityField": "id"
+        }
+    ],
     "changelogDate": "20191230152419",
     "entityTableName": "notification_history",
     "dto": "no",

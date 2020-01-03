@@ -6,7 +6,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 
 /**
  * A Loanpool.
@@ -27,7 +26,7 @@ public class Loanpool implements Serializable {
     private String total;
 
     @Column(name = "qualified")
-    private LocalDate qualified;
+    private String qualified;
 
     @Column(name = "rejected")
     private String rejected;
@@ -69,16 +68,16 @@ public class Loanpool implements Serializable {
         this.total = total;
     }
 
-    public LocalDate getQualified() {
+    public String getQualified() {
         return qualified;
     }
 
-    public Loanpool qualified(LocalDate qualified) {
+    public Loanpool qualified(String qualified) {
         this.qualified = qualified;
         return this;
     }
 
-    public void setQualified(LocalDate qualified) {
+    public void setQualified(String qualified) {
         this.qualified = qualified;
     }
 
