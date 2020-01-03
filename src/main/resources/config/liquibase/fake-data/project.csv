@@ -1,6 +1,6 @@
-id;project_no;project_name;project_status;application_id;info_beneficiaries_id;commitment_id;assignment_id;member_id;program_id
-1;5000;2019 CIP #5000;In Review;1;1;1;1;1;1
-2;4999;2019 UDA #4999;Approved;2;2;2;2;2;2
-3;4998;2019 RDA #4998;Approved;3;3;3;3;3;3
-4;4997;2019 BDA #4997;Approved;4;4;4;4;4;4
-5;4996;2019 DRF (Maria & Irma) #4996;Approved;5;5;5;5;5;5
+id;project_no;project_name;project_status;application_id;info_beneficiaries_id;commitment_id;assignment_id;member_id;program_id;loanpool_id
+1;5000;2019 CIP #5000;In Review;1;1;1;1;1;1;1
+2;4999;2019 UDA #4999;Approved;2;2;2;2;2;2;2
+3;4998;2019 RDA #4998;Approved;3;3;3;3;3;3;3
+4;4997;2019 BDA #4997;Approved;4;4;4;4;4;4;4
+5;4996;2019 DRF (Maria & Irma) #4996;Approved;5;5;5;5;5;5;5

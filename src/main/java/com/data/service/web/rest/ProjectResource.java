@@ -106,6 +106,13 @@ public class ProjectResource {
         return ResponseUtil.wrapOrNotFound(project);
     }
 
+
+    @GetMapping("/projectsbyprojectid/{id}")
+    public ResponseEntity<Project> getProjectbyProjectId(@PathVariable String id) {
+        log.debug("REST request to get projectsbyprojectid : {}", id);
+        Optional<Project> project = projectRepository.findByProjectNo(id);
+        return ResponseUtil.wrapOrNotFound(project);
+    }
     /**
      * {@code DELETE  /projects/:id} : delete the "id" project.
      *

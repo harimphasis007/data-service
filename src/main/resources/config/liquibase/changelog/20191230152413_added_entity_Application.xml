@@ -70,9 +70,6 @@
             <column name="assignment_id" type="bigint">
                 <constraints unique="true" nullable="true" uniqueConstraintName="ux_application_assignment_id" />
             </column>
-            <column name="loanpool_id" type="bigint">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_application_loanpool_id" />
-            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
     </changeSet>

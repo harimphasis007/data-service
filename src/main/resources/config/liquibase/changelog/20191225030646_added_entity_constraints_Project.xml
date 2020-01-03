@@ -38,6 +38,12 @@
                                  referencedColumnNames="id"
                                  referencedTableName="member"/>
 
+        <addForeignKeyConstraint baseColumnNames="loanpool_id"
+                                 baseTableName="project"
+                                 constraintName="fk_project_loanpool_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="loanpool"/>
+
         <addForeignKeyConstraint baseColumnNames="program_id"
                                  baseTableName="project"
                                  constraintName="fk_project_program_id"

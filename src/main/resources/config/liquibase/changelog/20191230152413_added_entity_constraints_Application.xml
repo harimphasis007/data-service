@@ -14,11 +14,5 @@
                                  referencedColumnNames="id"
                                  referencedTableName="assignment"/>
 
-        <addForeignKeyConstraint baseColumnNames="loanpool_id"
-                                 baseTableName="application"
-                                 constraintName="fk_application_loanpool_id"
-                                 referencedColumnNames="id"
-                                 referencedTableName="loanpool"/>
-
     </changeSet>
 </databaseChangeLog>

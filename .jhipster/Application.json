@@ -81,20 +81,6 @@
             "relationshipName": "assignment",
             "otherEntityField": "id",
             "ownerSide": true
-        },
-        {
-            "relationshipType": "one-to-one",
-            "otherEntityName": "loanpool",
-            "otherEntityRelationshipName": "application",
-            "relationshipName": "loanpool",
-            "otherEntityField": "id",
-            "ownerSide": true
-        },
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "loan",
-            "otherEntityRelationshipName": "application",
-            "relationshipName": "loan"
         }
     ],
     "changelogDate": "20191230152413",

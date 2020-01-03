@@ -48,9 +48,9 @@
     "relationships": [
         {
             "relationshipType": "many-to-one",
-            "otherEntityName": "application",
+            "otherEntityName": "project",
             "otherEntityRelationshipName": "loan",
-            "relationshipName": "application",
+            "relationshipName": "project",
             "otherEntityField": "id"
         }
     ],

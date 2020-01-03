@@ -166,7 +166,7 @@ relationship OneToOne {
 }
 
 relationship OneToMany {
-	Application to Loan{application}
+	Project to Loan{project}
 }
 
 relationship OneToMany {
@@ -182,6 +182,6 @@ relationship OneToMany {
 }
 
 relationship OneToOne {
-	Application{loanpool} to Loanpool
+	Project{loanpool} to Loanpool
 }
 microservice * with dataservice

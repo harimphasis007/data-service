@@ -62,6 +62,20 @@
             "ownerSide": true
         },
         {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "loanpool",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "loanpool",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "loan",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "loan"
+        },
+        {
             "relationshipType": "one-to-many",
             "otherEntityName": "projectLog",
             "otherEntityRelationshipName": "project",

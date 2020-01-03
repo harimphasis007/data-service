@@ -55,6 +55,14 @@ public class Project implements Serializable {
     @JoinColumn(unique = true)
     private Member member;
 
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Loanpool loanpool;
+
+    @OneToMany(mappedBy = "project")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Loan> loans = new HashSet<>();
+
     @OneToMany(mappedBy = "project")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ProjectLog> projectLogs = new HashSet<>();
@@ -178,6 +186,44 @@ public class Project implements Serializable {
 
     public void setMember(Member member) {
         this.member = member;
+    }
+
+    public Loanpool getLoanpool() {
+        return loanpool;
+    }
+
+    public Project loanpool(Loanpool loanpool) {
+        this.loanpool = loanpool;
+        return this;
+    }
+
+    public void setLoanpool(Loanpool loanpool) {
+        this.loanpool = loanpool;
+    }
+
+    public Set<Loan> getLoans() {
+        return loans;
+    }
+
+    public Project loans(Set<Loan> loans) {
+        this.loans = loans;
+        return this;
+    }
+
+    public Project addLoan(Loan loan) {
+        this.loans.add(loan);
+        loan.setProject(this);
+        return this;
+    }
+
+    public Project removeLoan(Loan loan) {
+        this.loans.remove(loan);
+        loan.setProject(null);
+        return this;
+    }
+
+    public void setLoans(Set<Loan> loans) {
+        this.loans = loans;
     }
 
     public Set<ProjectLog> getProjectLogs() {
