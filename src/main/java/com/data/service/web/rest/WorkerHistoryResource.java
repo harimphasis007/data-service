@@ -1,5 +1,6 @@
 package com.data.service.web.rest;
 
+import com.data.service.domain.ProjectLog;
 import com.data.service.domain.WorkerHistory;
 import com.data.service.repository.WorkerHistoryRepository;
 import com.data.service.web.rest.errors.BadRequestAlertException;
@@ -117,5 +118,12 @@ public class WorkerHistoryResource {
         log.debug("REST request to delete WorkerHistory : {}", id);
         workerHistoryRepository.deleteById(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+    }
+
+    @GetMapping("/workerhistorybyassignment/{id}")
+    public List<WorkerHistory> getProjectLogByAssignment(@PathVariable Long id) {
+        log.debug("REST request to get WorkerHistory : {}", id);
+        List<WorkerHistory> projectLog = workerHistoryRepository.findByAssignment_id(id);
+        return projectLog;
     }
 }
