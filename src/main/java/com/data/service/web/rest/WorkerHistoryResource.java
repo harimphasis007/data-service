@@ -120,8 +120,8 @@ public class WorkerHistoryResource {
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
 
-    @GetMapping("/workerhistorybyproject/{id}")
-    public List<WorkerHistory> getProjectLogByProject(@PathVariable Long id) {
+    @GetMapping("/workerhistorybyassignment/{id}")
+    public List<WorkerHistory> getProjectLogByAssignment(@PathVariable Long id) {
         log.debug("REST request to get WorkerHistory : {}", id);
         List<WorkerHistory> projectLog = workerHistoryRepository.findByAssignment_id(id);
         return projectLog;
