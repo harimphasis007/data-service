@@ -1,6 +1,6 @@
-id;commitment_status;commitment_bal;commitment_expiration
-1;Inactive;;
-2;Active;22000000;2019-11-30
-3;Inactive;0;2019-10-31
-4;Active;12000000;2019-12-31
-5;Inactive;0;2019-12-30
+id;commitment_status;commitment_bal;commitment_expiration;commence_date;avaiable_bal;total_drawdowns;recent_drawdown;amount_expiring
+1;Inactive;;;;;;;
+2;Active;22000000;2019-09-01;2019-10-01;2000000;20000000;5000000;22000000
+3;Inactive;0;2019-10-31;;;;;
+4;Active;12000000;2019-12-31;2019-11-30;2000000;10000000;5000000;12000000
+5;Inactive;0;2019-12-30;;;;;

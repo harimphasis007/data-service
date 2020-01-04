@@ -39,7 +39,25 @@ entity Member {
 entity Commitment {
     commitmentStatus String required,
 	commitmentBal String,
-	commitmentExpiration LocalDate
+	commitmentExpiration LocalDate,
+	commenceDate LocalDate,
+	avaiableBal String,
+	totalDrawdowns String,
+	recentDrawdown String,
+	amountExpiring String
+}
+
+entity DrawdownHistory {
+	date LocalDate,
+	note String,
+	status String,
+	amount String,
+	term String,
+	rate String,
+	maturityDate LocalDate,
+	intSubsidyAl String,
+	intSubsidyCr String
+
 }
 
 entity Assignment{
@@ -166,7 +184,12 @@ relationship OneToOne {
 }
 
 relationship OneToMany {
-	Application to Loan{application}
+	Project to Loan{project}
+}
+
+
+relationship OneToMany {
+	Project to DrawdownHistory{project}
 }
 
 relationship OneToMany {
@@ -182,6 +205,6 @@ relationship OneToMany {
 }
 
 relationship OneToOne {
-	Application{loanpool} to Loanpool
+	Project{loanpool} to Loanpool
 }
 microservice * with dataservice

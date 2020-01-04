@@ -1,16 +1,17 @@
 {
-    "name": "Loan",
+    "name": "DrawdownHistory",
     "fields": [
         {
-            "fieldName": "loanid",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
+            "fieldName": "date",
+            "fieldType": "LocalDate"
         },
         {
-            "fieldName": "settelmentDate",
-            "fieldType": "LocalDate"
+            "fieldName": "note",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
         },
         {
             "fieldName": "amount",
@@ -21,27 +22,19 @@
             "fieldType": "String"
         },
         {
-            "fieldName": "propertyAddress",
+            "fieldName": "rate",
             "fieldType": "String"
         },
         {
-            "fieldName": "mbsPoolId",
+            "fieldName": "maturityDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "intSubsidyAl",
             "fieldType": "String"
         },
         {
-            "fieldName": "mbsQualifies",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "qualificationMethod",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "decision",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "rejectionReason",
+            "fieldName": "intSubsidyCr",
             "fieldType": "String"
         }
     ],
@@ -49,13 +42,13 @@
         {
             "relationshipType": "many-to-one",
             "otherEntityName": "project",
-            "otherEntityRelationshipName": "loan",
+            "otherEntityRelationshipName": "drawdownHistory",
             "relationshipName": "project",
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20191230152423",
-    "entityTableName": "loan",
+    "changelogDate": "20200103193344",
+    "entityTableName": "drawdown_history",
     "dto": "no",
     "pagination": "no",
     "service": "no",

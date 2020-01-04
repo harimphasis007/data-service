@@ -44,6 +44,21 @@ public class CommitmentResourceIT {
     private static final LocalDate DEFAULT_COMMITMENT_EXPIRATION = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_COMMITMENT_EXPIRATION = LocalDate.now(ZoneId.systemDefault());
 
+    private static final LocalDate DEFAULT_COMMENCE_DATE = LocalDate.ofEpochDay(0L);
+    private static final LocalDate UPDATED_COMMENCE_DATE = LocalDate.now(ZoneId.systemDefault());
+
+    private static final String DEFAULT_AVAIABLE_BAL = "AAAAAAAAAA";
+    private static final String UPDATED_AVAIABLE_BAL = "BBBBBBBBBB";
+
+    private static final String DEFAULT_TOTAL_DRAWDOWNS = "AAAAAAAAAA";
+    private static final String UPDATED_TOTAL_DRAWDOWNS = "BBBBBBBBBB";
+
+    private static final String DEFAULT_RECENT_DRAWDOWN = "AAAAAAAAAA";
+    private static final String UPDATED_RECENT_DRAWDOWN = "BBBBBBBBBB";
+
+    private static final String DEFAULT_AMOUNT_EXPIRING = "AAAAAAAAAA";
+    private static final String UPDATED_AMOUNT_EXPIRING = "BBBBBBBBBB";
+
     @Autowired
     private CommitmentRepository commitmentRepository;
 
@@ -88,7 +103,12 @@ public class CommitmentResourceIT {
         Commitment commitment = new Commitment()
             .commitmentStatus(DEFAULT_COMMITMENT_STATUS)
             .commitmentBal(DEFAULT_COMMITMENT_BAL)
-            .commitmentExpiration(DEFAULT_COMMITMENT_EXPIRATION);
+            .commitmentExpiration(DEFAULT_COMMITMENT_EXPIRATION)
+            .commenceDate(DEFAULT_COMMENCE_DATE)
+            .avaiableBal(DEFAULT_AVAIABLE_BAL)
+            .totalDrawdowns(DEFAULT_TOTAL_DRAWDOWNS)
+            .recentDrawdown(DEFAULT_RECENT_DRAWDOWN)
+            .amountExpiring(DEFAULT_AMOUNT_EXPIRING);
         return commitment;
     }
     /**
@@ -101,7 +121,12 @@ public class CommitmentResourceIT {
         Commitment commitment = new Commitment()
             .commitmentStatus(UPDATED_COMMITMENT_STATUS)
             .commitmentBal(UPDATED_COMMITMENT_BAL)
-            .commitmentExpiration(UPDATED_COMMITMENT_EXPIRATION);
+            .commitmentExpiration(UPDATED_COMMITMENT_EXPIRATION)
+            .commenceDate(UPDATED_COMMENCE_DATE)
+            .avaiableBal(UPDATED_AVAIABLE_BAL)
+            .totalDrawdowns(UPDATED_TOTAL_DRAWDOWNS)
+            .recentDrawdown(UPDATED_RECENT_DRAWDOWN)
+            .amountExpiring(UPDATED_AMOUNT_EXPIRING);
         return commitment;
     }
 
@@ -128,6 +153,11 @@ public class CommitmentResourceIT {
         assertThat(testCommitment.getCommitmentStatus()).isEqualTo(DEFAULT_COMMITMENT_STATUS);
         assertThat(testCommitment.getCommitmentBal()).isEqualTo(DEFAULT_COMMITMENT_BAL);
         assertThat(testCommitment.getCommitmentExpiration()).isEqualTo(DEFAULT_COMMITMENT_EXPIRATION);
+        assertThat(testCommitment.getCommenceDate()).isEqualTo(DEFAULT_COMMENCE_DATE);
+        assertThat(testCommitment.getAvaiableBal()).isEqualTo(DEFAULT_AVAIABLE_BAL);
+        assertThat(testCommitment.getTotalDrawdowns()).isEqualTo(DEFAULT_TOTAL_DRAWDOWNS);
+        assertThat(testCommitment.getRecentDrawdown()).isEqualTo(DEFAULT_RECENT_DRAWDOWN);
+        assertThat(testCommitment.getAmountExpiring()).isEqualTo(DEFAULT_AMOUNT_EXPIRING);
     }
 
     @Test
@@ -181,7 +211,12 @@ public class CommitmentResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(commitment.getId().intValue())))
             .andExpect(jsonPath("$.[*].commitmentStatus").value(hasItem(DEFAULT_COMMITMENT_STATUS)))
             .andExpect(jsonPath("$.[*].commitmentBal").value(hasItem(DEFAULT_COMMITMENT_BAL)))
-            .andExpect(jsonPath("$.[*].commitmentExpiration").value(hasItem(DEFAULT_COMMITMENT_EXPIRATION.toString())));
+            .andExpect(jsonPath("$.[*].commitmentExpiration").value(hasItem(DEFAULT_COMMITMENT_EXPIRATION.toString())))
+            .andExpect(jsonPath("$.[*].commenceDate").value(hasItem(DEFAULT_COMMENCE_DATE.toString())))
+            .andExpect(jsonPath("$.[*].avaiableBal").value(hasItem(DEFAULT_AVAIABLE_BAL)))
+            .andExpect(jsonPath("$.[*].totalDrawdowns").value(hasItem(DEFAULT_TOTAL_DRAWDOWNS)))
+            .andExpect(jsonPath("$.[*].recentDrawdown").value(hasItem(DEFAULT_RECENT_DRAWDOWN)))
+            .andExpect(jsonPath("$.[*].amountExpiring").value(hasItem(DEFAULT_AMOUNT_EXPIRING)));
     }
     
     @Test
@@ -197,7 +232,12 @@ public class CommitmentResourceIT {
             .andExpect(jsonPath("$.id").value(commitment.getId().intValue()))
             .andExpect(jsonPath("$.commitmentStatus").value(DEFAULT_COMMITMENT_STATUS))
             .andExpect(jsonPath("$.commitmentBal").value(DEFAULT_COMMITMENT_BAL))
-            .andExpect(jsonPath("$.commitmentExpiration").value(DEFAULT_COMMITMENT_EXPIRATION.toString()));
+            .andExpect(jsonPath("$.commitmentExpiration").value(DEFAULT_COMMITMENT_EXPIRATION.toString()))
+            .andExpect(jsonPath("$.commenceDate").value(DEFAULT_COMMENCE_DATE.toString()))
+            .andExpect(jsonPath("$.avaiableBal").value(DEFAULT_AVAIABLE_BAL))
+            .andExpect(jsonPath("$.totalDrawdowns").value(DEFAULT_TOTAL_DRAWDOWNS))
+            .andExpect(jsonPath("$.recentDrawdown").value(DEFAULT_RECENT_DRAWDOWN))
+            .andExpect(jsonPath("$.amountExpiring").value(DEFAULT_AMOUNT_EXPIRING));
     }
 
     @Test
@@ -223,7 +263,12 @@ public class CommitmentResourceIT {
         updatedCommitment
             .commitmentStatus(UPDATED_COMMITMENT_STATUS)
             .commitmentBal(UPDATED_COMMITMENT_BAL)
-            .commitmentExpiration(UPDATED_COMMITMENT_EXPIRATION);
+            .commitmentExpiration(UPDATED_COMMITMENT_EXPIRATION)
+            .commenceDate(UPDATED_COMMENCE_DATE)
+            .avaiableBal(UPDATED_AVAIABLE_BAL)
+            .totalDrawdowns(UPDATED_TOTAL_DRAWDOWNS)
+            .recentDrawdown(UPDATED_RECENT_DRAWDOWN)
+            .amountExpiring(UPDATED_AMOUNT_EXPIRING);
 
         restCommitmentMockMvc.perform(put("/api/commitments")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -237,6 +282,11 @@ public class CommitmentResourceIT {
         assertThat(testCommitment.getCommitmentStatus()).isEqualTo(UPDATED_COMMITMENT_STATUS);
         assertThat(testCommitment.getCommitmentBal()).isEqualTo(UPDATED_COMMITMENT_BAL);
         assertThat(testCommitment.getCommitmentExpiration()).isEqualTo(UPDATED_COMMITMENT_EXPIRATION);
+        assertThat(testCommitment.getCommenceDate()).isEqualTo(UPDATED_COMMENCE_DATE);
+        assertThat(testCommitment.getAvaiableBal()).isEqualTo(UPDATED_AVAIABLE_BAL);
+        assertThat(testCommitment.getTotalDrawdowns()).isEqualTo(UPDATED_TOTAL_DRAWDOWNS);
+        assertThat(testCommitment.getRecentDrawdown()).isEqualTo(UPDATED_RECENT_DRAWDOWN);
+        assertThat(testCommitment.getAmountExpiring()).isEqualTo(UPDATED_AMOUNT_EXPIRING);
     }
 
     @Test

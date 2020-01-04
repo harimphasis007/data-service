@@ -1,6 +1,7 @@
 package com.data.service.web.rest;
 
 import com.data.service.domain.Commitment;
+import com.data.service.domain.Loan;
 import com.data.service.repository.CommitmentRepository;
 import com.data.service.web.rest.errors.BadRequestAlertException;
 
@@ -92,6 +93,7 @@ public class CommitmentResource {
         log.debug("REST request to get all Commitments");
         return commitmentRepository.findAll();
     }
+
 
     /**
      * {@code GET  /commitments/:id} : get the "id" commitment.

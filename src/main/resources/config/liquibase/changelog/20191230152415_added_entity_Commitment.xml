@@ -25,6 +25,21 @@
             <column name="commitment_expiration" type="date">
                 <constraints nullable="true" />
             </column>
+            <column name="commence_date" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="avaiable_bal" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="total_drawdowns" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="recent_drawdown" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="amount_expiring" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
     </changeSet>
@@ -51,6 +66,11 @@
             <column name="commitment_status" type="string"/>
             <column name="commitment_bal" type="string"/>
             <column name="commitment_expiration" type="date"/>
+            <column name="commence_date" type="date"/>
+            <column name="avaiable_bal" type="string"/>
+            <column name="total_drawdowns" type="string"/>
+            <column name="recent_drawdown" type="string"/>
+            <column name="amount_expiring" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
         </loadData>
     </changeSet>

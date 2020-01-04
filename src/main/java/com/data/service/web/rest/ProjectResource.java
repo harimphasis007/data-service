@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional; 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -106,6 +106,13 @@ public class ProjectResource {
         return ResponseUtil.wrapOrNotFound(project);
     }
 
+
+    @GetMapping("/projectsbyprojectid/{id}")
+    public ResponseEntity<Project> getProjectbyProjectId(@PathVariable String id) {
+        log.debug("REST request to get projectsbyprojectid : {}", id);
+        Optional<Project> project = projectRepository.findByProjectNo(id);
+        return ResponseUtil.wrapOrNotFound(project);
+    }
     /**
      * {@code DELETE  /projects/:id} : delete the "id" project.
      *

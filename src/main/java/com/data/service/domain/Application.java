@@ -7,8 +7,6 @@ import javax.validation.constraints.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * A Application.
@@ -79,14 +77,6 @@ public class Application implements Serializable {
     @OneToOne
     @JoinColumn(unique = true)
     private Assignment assignment;
-
-    @OneToOne
-    @JoinColumn(unique = true)
-    private Loanpool loanpool;
-
-    @OneToMany(mappedBy = "application")
-    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<Loan> loans = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -329,44 +319,6 @@ public class Application implements Serializable {
 
     public void setAssignment(Assignment assignment) {
         this.assignment = assignment;
-    }
-
-    public Loanpool getLoanpool() {
-        return loanpool;
-    }
-
-    public Application loanpool(Loanpool loanpool) {
-        this.loanpool = loanpool;
-        return this;
-    }
-
-    public void setLoanpool(Loanpool loanpool) {
-        this.loanpool = loanpool;
-    }
-
-    public Set<Loan> getLoans() {
-        return loans;
-    }
-
-    public Application loans(Set<Loan> loans) {
-        this.loans = loans;
-        return this;
-    }
-
-    public Application addLoan(Loan loan) {
-        this.loans.add(loan);
-        loan.setApplication(this);
-        return this;
-    }
-
-    public Application removeLoan(Loan loan) {
-        this.loans.remove(loan);
-        loan.setApplication(null);
-        return this;
-    }
-
-    public void setLoans(Set<Loan> loans) {
-        this.loans = loans;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

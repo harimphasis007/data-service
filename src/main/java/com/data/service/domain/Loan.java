@@ -56,7 +56,7 @@ public class Loan implements Serializable {
 
     @ManyToOne
     @JsonIgnoreProperties("loans")
-    private Application application;
+    private Project project;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -197,17 +197,17 @@ public class Loan implements Serializable {
         this.rejectionReason = rejectionReason;
     }
 
-    public Application getApplication() {
-        return application;
+    public Project getProject() {
+        return project;
     }
 
-    public Loan application(Application application) {
-        this.application = application;
+    public Loan project(Project project) {
+        this.project = project;
         return this;
     }
 
-    public void setApplication(Application application) {
-        this.application = application;
+    public void setProject(Project project) {
+        this.project = project;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

@@ -93,6 +93,13 @@ public class LoanResource {
         return loanRepository.findAll();
     }
 
+    @GetMapping("/loansbyproject/{id}")
+    public List<Loan> getAllLoansByProject(@PathVariable Long id) {
+        log.debug("REST request to get Loan : {}", id);
+        List<Loan> loan = loanRepository.findByProject_id(id);
+        return loan;
+    }
+
     /**
      * {@code GET  /loans/:id} : get the "id" loan.
      *

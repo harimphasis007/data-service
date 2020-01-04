@@ -56,6 +56,9 @@ public class CacheConfiguration {
             createCache(cm, com.data.service.domain.Loan.class.getName());
             createCache(cm, com.data.service.domain.Loanpool.class.getName());
             createCache(cm, com.data.service.domain.Project.class.getName() + ".notificationHistories");
+            createCache(cm, com.data.service.domain.Project.class.getName() + ".loans");
+            createCache(cm, com.data.service.domain.Project.class.getName() + ".drawdownHistories");
+            createCache(cm, com.data.service.domain.DrawdownHistory.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
