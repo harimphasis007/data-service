@@ -1,5 +1,6 @@
 package com.data.service.web.rest;
 
+import com.data.service.domain.Loan;
 import com.data.service.domain.ProjectLog;
 import com.data.service.repository.ProjectLogRepository;
 import com.data.service.web.rest.errors.BadRequestAlertException;
@@ -117,5 +118,12 @@ public class ProjectLogResource {
         log.debug("REST request to delete ProjectLog : {}", id);
         projectLogRepository.deleteById(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+    }
+
+    @GetMapping("/projectlogsbyproject/{id}")
+    public List<ProjectLog> getProjectLogByProject(@PathVariable Long id) {
+        log.debug("REST request to get ProjectLog : {}", id);
+        List<ProjectLog> projectLog = projectLogRepository.findByProject_id(id);
+        return projectLog;
     }
 }
