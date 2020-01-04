@@ -1,0 +1,61 @@
+{
+    "name": "DrawdownHistory",
+    "fields": [
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "note",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "term",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "maturityDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "intSubsidyAl",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "intSubsidyCr",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "project",
+            "otherEntityRelationshipName": "drawdownHistory",
+            "relationshipName": "project",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200103193344",
+    "entityTableName": "drawdown_history",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "dataservice",
+    "applications": "*",
+    "microserviceName": "dataservice"
+}

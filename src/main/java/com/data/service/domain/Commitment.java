@@ -32,6 +32,21 @@ public class Commitment implements Serializable {
     @Column(name = "commitment_expiration")
     private LocalDate commitmentExpiration;
 
+    @Column(name = "commence_date")
+    private LocalDate commenceDate;
+
+    @Column(name = "avaiable_bal")
+    private String avaiableBal;
+
+    @Column(name = "total_drawdowns")
+    private String totalDrawdowns;
+
+    @Column(name = "recent_drawdown")
+    private String recentDrawdown;
+
+    @Column(name = "amount_expiring")
+    private String amountExpiring;
+
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
         return id;
@@ -79,6 +94,71 @@ public class Commitment implements Serializable {
     public void setCommitmentExpiration(LocalDate commitmentExpiration) {
         this.commitmentExpiration = commitmentExpiration;
     }
+
+    public LocalDate getCommenceDate() {
+        return commenceDate;
+    }
+
+    public Commitment commenceDate(LocalDate commenceDate) {
+        this.commenceDate = commenceDate;
+        return this;
+    }
+
+    public void setCommenceDate(LocalDate commenceDate) {
+        this.commenceDate = commenceDate;
+    }
+
+    public String getAvaiableBal() {
+        return avaiableBal;
+    }
+
+    public Commitment avaiableBal(String avaiableBal) {
+        this.avaiableBal = avaiableBal;
+        return this;
+    }
+
+    public void setAvaiableBal(String avaiableBal) {
+        this.avaiableBal = avaiableBal;
+    }
+
+    public String getTotalDrawdowns() {
+        return totalDrawdowns;
+    }
+
+    public Commitment totalDrawdowns(String totalDrawdowns) {
+        this.totalDrawdowns = totalDrawdowns;
+        return this;
+    }
+
+    public void setTotalDrawdowns(String totalDrawdowns) {
+        this.totalDrawdowns = totalDrawdowns;
+    }
+
+    public String getRecentDrawdown() {
+        return recentDrawdown;
+    }
+
+    public Commitment recentDrawdown(String recentDrawdown) {
+        this.recentDrawdown = recentDrawdown;
+        return this;
+    }
+
+    public void setRecentDrawdown(String recentDrawdown) {
+        this.recentDrawdown = recentDrawdown;
+    }
+
+    public String getAmountExpiring() {
+        return amountExpiring;
+    }
+
+    public Commitment amountExpiring(String amountExpiring) {
+        this.amountExpiring = amountExpiring;
+        return this;
+    }
+
+    public void setAmountExpiring(String amountExpiring) {
+        this.amountExpiring = amountExpiring;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -104,6 +184,11 @@ public class Commitment implements Serializable {
             ", commitmentStatus='" + getCommitmentStatus() + "'" +
             ", commitmentBal='" + getCommitmentBal() + "'" +
             ", commitmentExpiration='" + getCommitmentExpiration() + "'" +
+            ", commenceDate='" + getCommenceDate() + "'" +
+            ", avaiableBal='" + getAvaiableBal() + "'" +
+            ", totalDrawdowns='" + getTotalDrawdowns() + "'" +
+            ", recentDrawdown='" + getRecentDrawdown() + "'" +
+            ", amountExpiring='" + getAmountExpiring() + "'" +
             "}";
     }
 }

@@ -65,6 +65,10 @@ public class Project implements Serializable {
 
     @OneToMany(mappedBy = "project")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<DrawdownHistory> drawdownHistories = new HashSet<>();
+
+    @OneToMany(mappedBy = "project")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ProjectLog> projectLogs = new HashSet<>();
 
     @OneToMany(mappedBy = "project")
@@ -224,6 +228,31 @@ public class Project implements Serializable {
 
     public void setLoans(Set<Loan> loans) {
         this.loans = loans;
+    }
+
+    public Set<DrawdownHistory> getDrawdownHistories() {
+        return drawdownHistories;
+    }
+
+    public Project drawdownHistories(Set<DrawdownHistory> drawdownHistories) {
+        this.drawdownHistories = drawdownHistories;
+        return this;
+    }
+
+    public Project addDrawdownHistory(DrawdownHistory drawdownHistory) {
+        this.drawdownHistories.add(drawdownHistory);
+        drawdownHistory.setProject(this);
+        return this;
+    }
+
+    public Project removeDrawdownHistory(DrawdownHistory drawdownHistory) {
+        this.drawdownHistories.remove(drawdownHistory);
+        drawdownHistory.setProject(null);
+        return this;
+    }
+
+    public void setDrawdownHistories(Set<DrawdownHistory> drawdownHistories) {
+        this.drawdownHistories = drawdownHistories;
     }
 
     public Set<ProjectLog> getProjectLogs() {

@@ -77,6 +77,12 @@
         },
         {
             "relationshipType": "one-to-many",
+            "otherEntityName": "drawdownHistory",
+            "otherEntityRelationshipName": "project",
+            "relationshipName": "drawdownHistory"
+        },
+        {
+            "relationshipType": "one-to-many",
             "otherEntityName": "projectLog",
             "otherEntityRelationshipName": "project",
             "relationshipName": "projectLog"

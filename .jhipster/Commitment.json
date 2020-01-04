@@ -15,6 +15,26 @@
         {
             "fieldName": "commitmentExpiration",
             "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "commenceDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "avaiableBal",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "totalDrawdowns",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "recentDrawdown",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "amountExpiring",
+            "fieldType": "String"
         }
     ],
     "relationships": [],
