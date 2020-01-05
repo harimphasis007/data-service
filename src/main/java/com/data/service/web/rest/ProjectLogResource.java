@@ -1,23 +1,23 @@
 package com.data.service.web.rest;
 
-import com.data.service.domain.Loan;
+import com.data.service.domain.Project;
 import com.data.service.domain.ProjectLog;
 import com.data.service.repository.ProjectLogRepository;
+import com.data.service.repository.ProjectRepository;
 import com.data.service.web.rest.errors.BadRequestAlertException;
-
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional; 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -37,6 +37,9 @@ public class ProjectLogResource {
     private String applicationName;
 
     private final ProjectLogRepository projectLogRepository;
+
+    @Autowired
+    private ProjectRepository projecRepository;
 
     public ProjectLogResource(ProjectLogRepository projectLogRepository) {
         this.projectLogRepository = projectLogRepository;
@@ -85,7 +88,6 @@ public class ProjectLogResource {
     /**
      * {@code GET  /project-logs} : get all the projectLogs.
      *
-
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of projectLogs in body.
      */
     @GetMapping("/project-logs")
@@ -126,4 +128,20 @@ public class ProjectLogResource {
         List<ProjectLog> projectLog = projectLogRepository.findByProject_id(id);
         return projectLog;
     }
+
+    @PostMapping("/addprojectlog/{projectno}")
+    public ResponseEntity<ProjectLog> addProjectLog(@Valid @RequestBody ProjectLog projectLog, @PathVariable String projectno) throws Exception {
+        log.debug("REST request to save ProjectLog : {}", projectLog);
+        if (projectLog.getId() != null) {
+            throw new BadRequestAlertException("A new projectLog cannot already have an ID", ENTITY_NAME, "idexists");
+        }
+        Optional<Project> optional = projecRepository.findByProjectNo(projectno);
+
+        projectLog.setProject(optional.get());
+        ProjectLog result = projectLogRepository.save(projectLog);
+        return ResponseEntity.created(new URI("/api/project-logs/" + result.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+            .body(result);
+    }
+
 }
